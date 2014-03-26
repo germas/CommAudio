@@ -34,6 +34,15 @@ namespace Client {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::ComboBox^  comboBoxDevices;
+	private: System::Windows::Forms::ComboBox^  comboBoxTypes;
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Button^  button3;
+
+	protected: 
 
 	private:
 		/// <summary>
@@ -48,12 +57,98 @@ namespace Client {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"MainForm";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->comboBoxDevices = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBoxTypes = (gcnew System::Windows::Forms::ComboBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(29, 178);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(90, 13);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Available devices";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(234, 177);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(72, 13);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Availble types";
+			// 
+			// comboBoxDevices
+			// 
+			this->comboBoxDevices->FormattingEnabled = true;
+			this->comboBoxDevices->Location = System::Drawing::Point(32, 195);
+			this->comboBoxDevices->Name = L"comboBoxDevices";
+			this->comboBoxDevices->Size = System::Drawing::Size(121, 21);
+			this->comboBoxDevices->TabIndex = 2;
+			// 
+			// comboBoxTypes
+			// 
+			this->comboBoxTypes->FormattingEnabled = true;
+			this->comboBoxTypes->Location = System::Drawing::Point(237, 194);
+			this->comboBoxTypes->Name = L"comboBoxTypes";
+			this->comboBoxTypes->Size = System::Drawing::Size(121, 21);
+			this->comboBoxTypes->TabIndex = 3;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(398, 192);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 4;
+			this->button1->Text = L"Kill portaudio";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(359, 100);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(114, 23);
+			this->button2->TabIndex = 5;
+			this->button2->Text = L"Initialize portAudio";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(381, 145);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(92, 23);
+			this->button3->TabIndex = 6;
+			this->button3->Text = L"Scan devices";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// MainForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(498, 296);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->comboBoxTypes);
+			this->Controls->Add(this->comboBoxDevices);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Name = L"MainForm";
+			this->Text = L"MainForm";
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
 		}
 #pragma endregion
-	};
+
+		
+	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+};
 }
