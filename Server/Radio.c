@@ -51,6 +51,9 @@ DWORD WINAPI RadioThread(LPVOID params){
 	multicastGroup.imr_interface.s_addr = htonl(INADDR_ANY); // Any local interface
 	multicastGroup.imr_multiaddr.s_addr = inet_addr(multicastAddr); // The multicast address
 
+	// Add the address info to the client info struct
+	clientInfo.radio_addr = inet_addr(multicastAddr);
+	clientInfo.mic_addr = inet_addr("234.5.6.8");
 
 	// Join our own multicast session
 	// Not required outside windows

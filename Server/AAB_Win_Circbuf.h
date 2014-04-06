@@ -10,7 +10,7 @@
 // Circular Buffer Handle
 #define CIRCBUF	struct AAB_Win_Circbuf*
 
-int CircbufInit(CIRCBUF circbuf, int size);
+int CircbufInit(CIRCBUF* circbuf, int size);
 int CircbufRead(CIRCBUF circbuf, void* readBuf, int toRead, int flags);
 int CircbufWrite(CIRCBUF circbuf, void* writeBuf, int toWrite, int flags);
 int CircBufSetBehavior(CIRCBUF circbuf, int readBehavior, int writeBehavior);

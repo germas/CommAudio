@@ -8,10 +8,12 @@ int main(int argc, char* argv[]){
 
 	CircbufInit(&outboundRadio, 2 * DATAGRAM_SIZE);
 	endOfProgramEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
+	newSongEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
 	bufferingSem = CreateSemaphore(NULL, 1l, 1l, NULL);
 	char addFile[MAX_PATH];
 
 	memset(&nowPlaying, 0, sizeof(nowPlaying));
+	memset(&clientInfo, 0, sizeof(clientInfo));
 
 	if (WSAStartup(0x0202, &wsaDat)){
 		printf("Failed to startup.\n");
@@ -20,6 +22,9 @@ int main(int argc, char* argv[]){
 
 	// Launch the radio sending thread
 	CreateThread(NULL, NULL, RadioThread, NULL, NULL, &thread);
+
+	// Launch the connection manager
+	CreateThread(NULL, NULL, ClientManager, NULL, NULL, NULL);
 
 	// Prompt for new files to buffer
 	do{
